@@ -10,16 +10,12 @@ end
 
 # Takes an array of parameters and adds them all together
 def sum(values_array)
-  output = 0
-  values_array.each { |value| output += value }
-  output
+  values_array.inject(0) { |sum, value| sum += value }
 end
 
 # Multiplies two or more numbers together
 def multiply(*all_args)
-  output = 1
-  all_args.each { |value| output *= value}
-  output
+  all_args.inject(1) { |sum, value| sum *= value}
 end
 
 # Raises one number to the power of another number

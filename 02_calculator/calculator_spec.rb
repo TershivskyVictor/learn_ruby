@@ -79,6 +79,10 @@ end
 
 describe "#multiply" do
   it "multiplies two numbers" do
+    multiply(0, 4).should == 0
+  end
+
+  it "multiplies two numbers" do
     multiply(2, 4).should == 8
   end
 
