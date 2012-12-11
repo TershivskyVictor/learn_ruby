@@ -20,7 +20,7 @@ end
 
 # Raises one number to the power of another number
 def power(curr_value, to_power)
-  curr_value ** to_power
+  curr_value**to_power
 end
 
 # The factorial of mumber (Use recursion)
