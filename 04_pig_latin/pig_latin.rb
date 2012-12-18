@@ -8,7 +8,7 @@ REGULAIR_PUNCTUATION = /[,-\.;:!]+/
 def translate(word_translate)
   output_string = ""
   word_translate.split(" ").each do |word|
-    
+
     #Punctuation (Test-driving bonus)
     punctuation = word.scan(REGULAIR_PUNCTUATION).to_s
     word = word.split(REGULAIR_PUNCTUATION).to_s
@@ -18,27 +18,21 @@ def translate(word_translate)
 
     #Phoemes
     SINGLE_PHOEMES.each do |poeme|
-      if word[0, poeme.length].downcase == poeme
+      if (word[0, poeme.length].downcase == poeme)
         word = word.slice(poeme.length..-1) + word[0, poeme.length]
       end
     end
 
     #Other word parts
-    while ENGLISH_VOVELS.index(word[0, 1].downcase) == nil && word.length > 1
+    while (ENGLISH_VOVELS.index(word[0, 1].downcase) == nil && word.length > 1)
       word = word.slice(1..-1) + word[0, 1]
     end
 
     #is capitalized (Test-driving bonus)
-    if is_capitalized
-      word.capitalize!
-    end
+    word.capitalize! if is_capitalized
 
     # It`s only punctuation or one word?
-    if (word.length > 1)
-      output_string += word + END_OF_PIG_WORDS + punctuation + " "
-    else
-      output_string += punctuation + " "
-    end
+    output_string += (word.length > 1 ? word + END_OF_PIG_WORDS : "") + punctuation + " "
   end
   output_string.chop
 end
