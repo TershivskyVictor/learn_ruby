@@ -4,7 +4,7 @@ class Temperature
   FARENGATE_TO_CELSIUS_KOEF = 1.0 / CELSIUS_TO_FARENGATE_KOEF
   CELSIUS_AND_FARENGATE_NULL_KOEF = 32.0
 
-  #default value of Temperature is fahrenheit - default its nil
+  #default value of Temperature is fahrenheit - default its 0
   def initialize(start_value)
     @options_hash = start_value
     if start_value.has_key? :c
@@ -12,7 +12,7 @@ class Temperature
     elsif start_value.has_key? :f
       @fahrenheit = start_value[:f]
     else
-      @fahrenheit = nil
+      @fahrenheit = 0
     end
   end
 
