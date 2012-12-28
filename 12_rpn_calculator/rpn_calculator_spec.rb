@@ -118,8 +118,8 @@ describe RPNCalculator do
 
   # extra credit
   it "tokenizes a string" do
-    calculator.tokens("1 2 3 * + 4 5 - /").should ==
-      [1, 2, 3, :*, :+, 4, 5, :-, :/]
+    calculator.tokens("0 1 2 3 * + 4 50 - /").should ==
+      [0, 1, 2, 3, :*, :+, 4, 50, :-, :/]
   end
 
   # extra credit
